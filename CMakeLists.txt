@@ -21,16 +21,18 @@ set(SOURCES
 # Add the IPC library
 add_library(ipc_library STATIC
     libsrc/ipc.c
+    libsrc/ipc_socket.c
 )
 
 # Add the IPC library
 add_library(ipc_library_shared SHARED
     libsrc/ipc.c
+    libsrc/ipc_socket.c
 )
 
 # Add subdirectories
 # add_subdirectory(tests)
-# add_subdirectory(examples)
+add_subdirectory(example)
 
 # Doxygen documentation
 find_package(Doxygen)

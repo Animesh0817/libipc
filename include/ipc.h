@@ -11,6 +11,8 @@
 
 #ifndef IPC_H
 #define IPC_H
+#define IPC_SUCCESS 0
+#define IPC_FAILURE -1
 
 #include <stddef.h>
 
@@ -74,7 +76,22 @@ typedef struct ipc_handle_t {
      * @return 0 on success, or a negative error code on failure.
      */
     int (*destroy)(void *ctx);
-    
+
+    /**
+     * @brief Accepts a new connection on a server socket.
+     *
+     * This function pointer is used for server socket IPC to accept incoming client connections.
+     * When implemented, it should accept a new connection from the server socket, creating
+     * and returning a new IPC handle for the client connection.
+     *
+     * @param server_handle Pointer to the server IPC handle. This handle represents the server
+     *        socket that is listening for incoming connections.
+     *
+     * @return A pointer to a new `ipc_handle_t` representing the client connection on success.
+     *         Returns `NULL` if the connection could not be accepted or an error occurred.
+     */
+    struct ipc_handle_t *(*accept)(struct ipc_handle_t *server_handle);
+
 } ipc_handle_t;
 
 ipc_handle_t *ipc_create();
