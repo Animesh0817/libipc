@@ -16,11 +16,18 @@
 #include "ipc.h"
 #include <errno.h>
 
+/**
+ * A Structure that will hold the following:
+ * Base IPC handle structure
+ * File descriptor for the socket
+ * Socket address information
+ * Flag to indicate if this is a server or client socket.
+ */
 typedef struct {
-    ipc_handle_t base;
-    int sockfd;
-    struct sockaddr_in addr;
-    int is_server; // Flag to indicate if this is a server or client socket
+    ipc_handle_t base; /**< Base IPC handle structure. */
+    int sockfd; /**< File descriptor for the socket. */
+    struct sockaddr_in addr; /**< Socket address information. */
+    int is_server; /**< Flag to indicate if this is a server or client socket. */
 } ipc_socket_t;
 
 

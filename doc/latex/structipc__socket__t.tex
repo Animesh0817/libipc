@@ -1,0 +1,58 @@
+\hypertarget{structipc__socket__t}{}\doxysection{ipc\+\_\+socket\+\_\+t Struct Reference}
+\label{structipc__socket__t}\index{ipc\_socket\_t@{ipc\_socket\_t}}
+
+
+Collaboration diagram for ipc\+\_\+socket\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{structipc__socket__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}} \mbox{\hyperlink{structipc__socket__t_a73242333cba8af229244e4f39999964d}{base}}
+\item 
+int \mbox{\hyperlink{structipc__socket__t_a7191b21e67075396c33d310b5e882f78}{sockfd}}
+\item 
+struct sockaddr\+\_\+in \mbox{\hyperlink{structipc__socket__t_a0bc356eb812766b728394e970d965aae}{addr}}
+\item 
+int \mbox{\hyperlink{structipc__socket__t_ac3e49042587262837a0a38cc02628602}{is\+\_\+server}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Structure that will hold the following\+: Base IPC handle structure File descriptor for the socket Socket address information Flag to indicate if this is a server or client socket. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structipc__socket__t_a0bc356eb812766b728394e970d965aae}\label{structipc__socket__t_a0bc356eb812766b728394e970d965aae}} 
+\index{ipc\_socket\_t@{ipc\_socket\_t}!addr@{addr}}
+\index{addr@{addr}!ipc\_socket\_t@{ipc\_socket\_t}}
+\doxysubsubsection{\texorpdfstring{addr}{addr}}
+{\footnotesize\ttfamily struct sockaddr\+\_\+in ipc\+\_\+socket\+\_\+t\+::addr}
+
+Socket address information. \mbox{\Hypertarget{structipc__socket__t_a73242333cba8af229244e4f39999964d}\label{structipc__socket__t_a73242333cba8af229244e4f39999964d}} 
+\index{ipc\_socket\_t@{ipc\_socket\_t}!base@{base}}
+\index{base@{base}!ipc\_socket\_t@{ipc\_socket\_t}}
+\doxysubsubsection{\texorpdfstring{base}{base}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}} ipc\+\_\+socket\+\_\+t\+::base}
+
+Base IPC handle structure. \mbox{\Hypertarget{structipc__socket__t_ac3e49042587262837a0a38cc02628602}\label{structipc__socket__t_ac3e49042587262837a0a38cc02628602}} 
+\index{ipc\_socket\_t@{ipc\_socket\_t}!is\_server@{is\_server}}
+\index{is\_server@{is\_server}!ipc\_socket\_t@{ipc\_socket\_t}}
+\doxysubsubsection{\texorpdfstring{is\_server}{is\_server}}
+{\footnotesize\ttfamily int ipc\+\_\+socket\+\_\+t\+::is\+\_\+server}
+
+Flag to indicate if this is a server or client socket. \mbox{\Hypertarget{structipc__socket__t_a7191b21e67075396c33d310b5e882f78}\label{structipc__socket__t_a7191b21e67075396c33d310b5e882f78}} 
+\index{ipc\_socket\_t@{ipc\_socket\_t}!sockfd@{sockfd}}
+\index{sockfd@{sockfd}!ipc\_socket\_t@{ipc\_socket\_t}}
+\doxysubsubsection{\texorpdfstring{sockfd}{sockfd}}
+{\footnotesize\ttfamily int ipc\+\_\+socket\+\_\+t\+::sockfd}
+
+File descriptor for the socket. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libsrc/\mbox{\hyperlink{ipc__socket_8c}{ipc\+\_\+socket.\+c}}\end{DoxyCompactItemize}

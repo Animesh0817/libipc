@@ -1,0 +1,89 @@
+\hypertarget{ipc_8c}{}\doxysection{libsrc/ipc.c File Reference}
+\label{ipc_8c}\index{libsrc/ipc.c@{libsrc/ipc.c}}
+
+
+Implementation of base IPC functions.  
+
+
+{\ttfamily \#include \char`\"{}ipc.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for ipc.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{ipc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}} $\ast$ \mbox{\hyperlink{ipc_8c_a4e2c1f5f5cb88de1c4d8c95295d4cd31}{ipc\+\_\+create}} (void)
+\begin{DoxyCompactList}\small\item\em Create a new IPC handle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ipc_8c_a69cd0ac0e4675563f5115372ceb0dd00}{ipc\+\_\+destroy}} (\mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}} $\ast$handle)
+\begin{DoxyCompactList}\small\item\em Destroy an IPC handle and release allocated memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of base IPC functions. 
+
+author Animesh0817 (\href{mailto:mailtome.anni@gmail.com}{\texttt{ mailtome.\+anni@gmail.\+com}}) 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ipc_8c_a4e2c1f5f5cb88de1c4d8c95295d4cd31}\label{ipc_8c_a4e2c1f5f5cb88de1c4d8c95295d4cd31}} 
+\index{ipc.c@{ipc.c}!ipc\_create@{ipc\_create}}
+\index{ipc\_create@{ipc\_create}!ipc.c@{ipc.c}}
+\doxysubsubsection{\texorpdfstring{ipc\_create()}{ipc\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}}$\ast$ ipc\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Create a new IPC handle. 
+
+This function allocates memory for a new Inter-\/\+Process Communication (IPC) handle and returns a pointer to it. The IPC handle is an abstract representation used to manage different types of IPC mechanisms (e.\+g., sockets, shared memory, etc.).
+
+This function does not initialize the handle beyond basic memory allocation. The user is responsible for assigning or initializing the relevant function pointers (e.\+g., init, send, receive, destroy) after creation.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the created IPC handle. Returns {\ttfamily NULL} if memory allocation fails.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The returned handle must be freed using {\ttfamily ipc\+\_\+destroy} to avoid memory leaks.
+\end{DoxyNote}
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structipc__handle__t}{ipc\_handle\_t}} *handle = \mbox{\hyperlink{ipc_8c_a4e2c1f5f5cb88de1c4d8c95295d4cd31}{ipc\_create}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (handle == NULL) \{}
+\DoxyCodeLine{    \textcolor{comment}{// Handle memory allocation failure}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{ipc_8c_a69cd0ac0e4675563f5115372ceb0dd00}\label{ipc_8c_a69cd0ac0e4675563f5115372ceb0dd00}} 
+\index{ipc.c@{ipc.c}!ipc\_destroy@{ipc\_destroy}}
+\index{ipc\_destroy@{ipc\_destroy}!ipc.c@{ipc.c}}
+\doxysubsubsection{\texorpdfstring{ipc\_destroy()}{ipc\_destroy()}}
+{\footnotesize\ttfamily void ipc\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+
+
+Destroy an IPC handle and release allocated memory. 
+
+This function frees the memory associated with a given IPC handle. It is the responsibility of the caller to ensure that the handle is no longer in use when this function is called, as calling this function will deallocate the memory and invalidate the pointer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to the IPC handle to destroy. If the pointer is {\ttfamily NULL}, this function does nothing.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function only frees the memory allocated for the IPC handle. If the handle manages additional resources (e.\+g., file descriptors, network sockets), those must be closed or released prior to calling {\ttfamily ipc\+\_\+destroy}.
+\end{DoxyNote}
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structipc__handle__t}{ipc\_handle\_t}} *handle = \mbox{\hyperlink{ipc_8c_a4e2c1f5f5cb88de1c4d8c95295d4cd31}{ipc\_create}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (handle != NULL) \{}
+\DoxyCodeLine{    \textcolor{comment}{// Perform IPC operations}}
+\DoxyCodeLine{    \mbox{\hyperlink{ipc_8c_a69cd0ac0e4675563f5115372ceb0dd00}{ipc\_destroy}}(handle);  \textcolor{comment}{// Clean up once done}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

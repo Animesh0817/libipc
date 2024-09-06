@@ -1,0 +1,10 @@
+<map id="example/ipc_socket_server.c" name="example/ipc_socket_server.c">
+<area shape="rect" id="node1" title="Simple IPC socket server using libipc framework for TCP&#45;based communication." alt="" coords="199,5,350,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,72,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="97,95,167,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="191,95,262,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="287,95,361,121"/>
+<area shape="rect" id="node6" href="$ipc__socket_8h.html" title="IPC using sockets." alt="" coords="386,95,489,121"/>
+<area shape="rect" id="node7" href="$ipc_8h.html" title="Defines the common interface and base structure for IPC mechanisms." alt="" coords="455,169,508,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="444,244,519,271"/>
+</map>

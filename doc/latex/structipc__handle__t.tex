@@ -1,0 +1,141 @@
+\hypertarget{structipc__handle__t}{}\doxysection{ipc\+\_\+handle\+\_\+t Struct Reference}
+\label{structipc__handle__t}\index{ipc\_handle\_t@{ipc\_handle\_t}}
+
+
+Collaboration diagram for ipc\+\_\+handle\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{structipc__handle__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int($\ast$ \mbox{\hyperlink{structipc__handle__t_a5adcb8d644d525e7e9772b0648caa592}{init}} )(void $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initializes the IPC mechanism. \end{DoxyCompactList}\item 
+int($\ast$ \mbox{\hyperlink{structipc__handle__t_a3c1d2906612c7bbdd7e67390ea40c68a}{send}} )(void $\ast$ctx, const void $\ast$data, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Sends data through the IPC mechanism. \end{DoxyCompactList}\item 
+int($\ast$ \mbox{\hyperlink{structipc__handle__t_a209c5e0e4fa00227687320e56d30582f}{receive}} )(void $\ast$ctx, void $\ast$buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Receives data from the IPC mechanism. \end{DoxyCompactList}\item 
+int($\ast$ \mbox{\hyperlink{structipc__handle__t_a48afeb850aa6d48f194a179f3be56179}{destroy}} )(void $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Destroys the IPC mechanism. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}} $\ast$($\ast$ \mbox{\hyperlink{structipc__handle__t_a080db1c47707725100395473572be177}{accept}} )(struct \mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}} $\ast$server\+\_\+handle)
+\begin{DoxyCompactList}\small\item\em Accepts a new connection on a server socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structipc__handle__t_a080db1c47707725100395473572be177}\label{structipc__handle__t_a080db1c47707725100395473572be177}} 
+\index{ipc\_handle\_t@{ipc\_handle\_t}!accept@{accept}}
+\index{accept@{accept}!ipc\_handle\_t@{ipc\_handle\_t}}
+\doxysubsubsection{\texorpdfstring{accept}{accept}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}}$\ast$($\ast$ ipc\+\_\+handle\+\_\+t\+::accept) (struct \mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}} $\ast$server\+\_\+handle)}
+
+
+
+Accepts a new connection on a server socket. 
+
+This function pointer is used for server socket IPC to accept incoming client connections. When implemented, it should accept a new connection from the server socket, creating and returning a new IPC handle for the client connection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\+\_\+handle} & Pointer to the server IPC handle. This handle represents the server socket that is listening for incoming connections.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a new {\ttfamily \mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}}} representing the client connection on success. Returns {\ttfamily NULL} if the connection could not be accepted or an error occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structipc__handle__t_a48afeb850aa6d48f194a179f3be56179}\label{structipc__handle__t_a48afeb850aa6d48f194a179f3be56179}} 
+\index{ipc\_handle\_t@{ipc\_handle\_t}!destroy@{destroy}}
+\index{destroy@{destroy}!ipc\_handle\_t@{ipc\_handle\_t}}
+\doxysubsubsection{\texorpdfstring{destroy}{destroy}}
+{\footnotesize\ttfamily int($\ast$ ipc\+\_\+handle\+\_\+t\+::destroy) (void $\ast$ctx)}
+
+
+
+Destroys the IPC mechanism. 
+
+This function cleans up any resources allocated by the IPC mechanism, effectively terminating its use. It should be called when the IPC mechanism is no longer needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & context pointer for different IPCs to the function pointers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative error code on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structipc__handle__t_a5adcb8d644d525e7e9772b0648caa592}\label{structipc__handle__t_a5adcb8d644d525e7e9772b0648caa592}} 
+\index{ipc\_handle\_t@{ipc\_handle\_t}!init@{init}}
+\index{init@{init}!ipc\_handle\_t@{ipc\_handle\_t}}
+\doxysubsubsection{\texorpdfstring{init}{init}}
+{\footnotesize\ttfamily int($\ast$ ipc\+\_\+handle\+\_\+t\+::init) (void $\ast$ctx)}
+
+
+
+Initializes the IPC mechanism. 
+
+This function initializes the IPC mechanism, setting up any required resources or configurations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & context pointer for different IPCs to the function pointers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative error code on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structipc__handle__t_a209c5e0e4fa00227687320e56d30582f}\label{structipc__handle__t_a209c5e0e4fa00227687320e56d30582f}} 
+\index{ipc\_handle\_t@{ipc\_handle\_t}!receive@{receive}}
+\index{receive@{receive}!ipc\_handle\_t@{ipc\_handle\_t}}
+\doxysubsubsection{\texorpdfstring{receive}{receive}}
+{\footnotesize\ttfamily int($\ast$ ipc\+\_\+handle\+\_\+t\+::receive) (void $\ast$ctx, void $\ast$buffer, size\+\_\+t size)}
+
+
+
+Receives data from the IPC mechanism. 
+
+This function receives data using the IPC mechanism. The specific behavior depends on the IPC mechanism being used (e.\+g., receiving a message, reading from shared memory, waiting for a signal, etc.).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & context pointer for different IPCs to the function pointers \\
+\hline
+{\em buffer} & Pointer to the buffer where received data will be stored. \\
+\hline
+{\em size} & Size of the buffer in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes received on success, or a negative error code on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structipc__handle__t_a3c1d2906612c7bbdd7e67390ea40c68a}\label{structipc__handle__t_a3c1d2906612c7bbdd7e67390ea40c68a}} 
+\index{ipc\_handle\_t@{ipc\_handle\_t}!send@{send}}
+\index{send@{send}!ipc\_handle\_t@{ipc\_handle\_t}}
+\doxysubsubsection{\texorpdfstring{send}{send}}
+{\footnotesize\ttfamily int($\ast$ ipc\+\_\+handle\+\_\+t\+::send) (void $\ast$ctx, const void $\ast$data, size\+\_\+t size)}
+
+
+
+Sends data through the IPC mechanism. 
+
+This function sends data using the IPC mechanism. The specific behavior depends on the IPC mechanism being used (e.\+g., sending a message, writing to shared memory, signaling, etc.).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & context pointer for different IPCs to the function pointers \\
+\hline
+{\em data} & Pointer to the data to be sent. \\
+\hline
+{\em size} & Size of the data to be sent in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative error code on failure. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ipc_8h}{ipc.\+h}}\end{DoxyCompactItemize}

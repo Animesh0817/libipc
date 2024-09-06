@@ -1,0 +1,64 @@
+\hypertarget{ipc__socket_8c}{}\doxysection{libsrc/ipc\+\_\+socket.c File Reference}
+\label{ipc__socket_8c}\index{libsrc/ipc\_socket.c@{libsrc/ipc\_socket.c}}
+
+
+Implementation of IPC using sockets.  
+
+
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ipc\+\_\+socket.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ipc.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+Include dependency graph for ipc\+\_\+socket.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ipc__socket_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structipc__socket__t}{ipc\+\_\+socket\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}} $\ast$ \mbox{\hyperlink{ipc__socket_8c_a1c3d8c03c5f650b2255122b33a4b1d11}{ipc\+\_\+socket\+\_\+create}} (const char $\ast$address, int port, int is\+\_\+server)
+\begin{DoxyCompactList}\small\item\em Create a new IPC socket handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of IPC using sockets. 
+
+author Animesh0817 (\href{mailto:mailtome.anni@gmail.com}{\texttt{ mailtome.\+anni@gmail.\+com}}) 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ipc__socket_8c_a1c3d8c03c5f650b2255122b33a4b1d11}\label{ipc__socket_8c_a1c3d8c03c5f650b2255122b33a4b1d11}} 
+\index{ipc\_socket.c@{ipc\_socket.c}!ipc\_socket\_create@{ipc\_socket\_create}}
+\index{ipc\_socket\_create@{ipc\_socket\_create}!ipc\_socket.c@{ipc\_socket.c}}
+\doxysubsubsection{\texorpdfstring{ipc\_socket\_create()}{ipc\_socket\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}}$\ast$ ipc\+\_\+socket\+\_\+create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{address,  }\item[{int}]{port,  }\item[{int}]{is\+\_\+server }\end{DoxyParamCaption})}
+
+
+
+Create a new IPC socket handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & IP address of the socket. \\
+\hline
+{\em port} & Port of the socket. \\
+\hline
+{\em is\+\_\+server} & Flag to indicate if this is a server or client socket. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created IPC socket handle. 
+\end{DoxyReturn}

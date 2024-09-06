@@ -11,18 +11,56 @@
 
 #ifndef IPC_H
 #define IPC_H
+
+/**
+ * @def IPC_SUCCESS
+ * @brief Macro indicating successful IPC operation.
+ *
+ * This macro is returned by functions to indicate that an IPC operation
+ * completed successfully.
+ */
 #define IPC_SUCCESS 0
+
+/**
+ * @def IPC_FAILURE
+ * @brief Macro indicating failed IPC operation.
+ *
+ * This macro is returned by functions to indicate that an IPC operation
+ * failed. It is typically used to signal error conditions during
+ * initialization, sending, receiving, or destroying IPC resources.
+ */
 #define IPC_FAILURE -1
 
 #include <stddef.h>
 
 /**
- * @struct ipc_handle_t
- * @brief The base structure for all IPC mechanisms.
+ * @typedef struct ipc_handle_t
+ * @brief Structure representing an IPC handle.
  *
- * This structure provides a unified interface for different IPC mechanisms.
- * It contains function pointers that point to the implementation of the
- * corresponding IPC operations.
+ * The ipc_handle_t structure serves as a generic handle for IPC mechanisms.
+ * It contains function pointers that define how an IPC handle is initialized,
+ * how data is sent and received, and how the IPC handle is destroyed.
+ * This abstraction allows different IPC implementations (e.g., sockets, shared
+ * memory, etc.) to use the same interface, making the framework flexible and
+ * extendable.
+ *
+ * Members:
+ * - init: Function pointer for initializing the IPC handle.
+ * - send: Function pointer for sending data using the IPC handle.
+ * - receive: Function pointer for receiving data using the IPC handle.
+ * - destroy: Function pointer for destroying the IPC handle and releasing
+ *   associated resources.
+ *
+ * Example usage:
+ * @code
+ * ipc_handle_t *handle = ipc_create();
+ * if (handle != NULL) {
+ *     if (handle->init(handle) == IPC_SUCCESS) {
+ *         // IPC initialized successfully, perform operations
+ *     }
+ *     handle->destroy(handle);  // Clean up
+ * }
+ * @endcode
  */
 typedef struct ipc_handle_t {
     

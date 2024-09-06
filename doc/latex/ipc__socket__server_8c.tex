@@ -1,0 +1,66 @@
+\hypertarget{ipc__socket__server_8c}{}\doxysection{example/ipc\+\_\+socket\+\_\+server.c File Reference}
+\label{ipc__socket__server_8c}\index{example/ipc\_socket\_server.c@{example/ipc\_socket\_server.c}}
+
+
+Simple IPC socket server using libipc framework for TCP-\/based communication.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ipc\+\_\+socket.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ipc.\+h\char`\"{}}\newline
+Include dependency graph for ipc\+\_\+socket\+\_\+server.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ipc__socket__server_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ipc__socket__server_8c_a34d476f860a832d42ef7c068e243a996}\label{ipc__socket__server_8c_a34d476f860a832d42ef7c068e243a996}} 
+\#define {\bfseries DEFAULT\+\_\+\+IP}~\char`\"{}0.\+0.\+0.\+0\char`\"{}
+\item 
+\mbox{\Hypertarget{ipc__socket__server_8c_a614217d263be1fb1a5f76e2ff7be19a2}\label{ipc__socket__server_8c_a614217d263be1fb1a5f76e2ff7be19a2}} 
+\#define {\bfseries PORT}~8080
+\item 
+\mbox{\Hypertarget{ipc__socket__server_8c_a6b20d41d6252e9871430c242cb1a56e7}\label{ipc__socket__server_8c_a6b20d41d6252e9871430c242cb1a56e7}} 
+\#define {\bfseries BUFFER\+\_\+\+SIZE}~1024
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ipc__socket__server_8c_a71b8b74c6201e5ee87e542ab80ec7a0d}{handle\+\_\+client}} (\mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}} $\ast$client\+\_\+sock)
+\begin{DoxyCompactList}\small\item\em Handles communication with the client. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ipc__socket__server_8c_a669ffd1951409567d9c1632ec65bf116}\label{ipc__socket__server_8c_a669ffd1951409567d9c1632ec65bf116}} 
+int \mbox{\hyperlink{ipc__socket__server_8c_a669ffd1951409567d9c1632ec65bf116}{socket\+\_\+server\+\_\+example}} ()
+\begin{DoxyCompactList}\small\item\em Function to perform Server side of IPC via LIBIPC. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ipc__socket__server_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{ipc__socket__server_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int \mbox{\hyperlink{ipc__socket__server_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main Driver function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple IPC socket server using libipc framework for TCP-\/based communication. 
+
+author Animesh0817 (\href{mailto:mailtome.anni@gmail.com}{\texttt{ mailtome.\+anni@gmail.\+com}}) 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ipc__socket__server_8c_a71b8b74c6201e5ee87e542ab80ec7a0d}\label{ipc__socket__server_8c_a71b8b74c6201e5ee87e542ab80ec7a0d}} 
+\index{ipc\_socket\_server.c@{ipc\_socket\_server.c}!handle\_client@{handle\_client}}
+\index{handle\_client@{handle\_client}!ipc\_socket\_server.c@{ipc\_socket\_server.c}}
+\doxysubsubsection{\texorpdfstring{handle\_client()}{handle\_client()}}
+{\footnotesize\ttfamily int handle\+\_\+client (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structipc__handle__t}{ipc\+\_\+handle\+\_\+t}} $\ast$}]{client\+\_\+sock }\end{DoxyParamCaption})}
+
+
+
+Handles communication with the client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client\+\_\+sock} & The IPC socket handle for the connected client. \\
+\hline
+\end{DoxyParams}

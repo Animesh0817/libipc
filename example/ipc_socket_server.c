@@ -1,5 +1,5 @@
 /**
- * @file ipc_server.c
+ * @file ipc_socket_server.c
  * author Animesh0817 (mailtome.anni@gmail.com)
  * @brief Simple IPC socket server using libipc framework for TCP-based communication.
  */
@@ -11,6 +11,7 @@
 #include "ipc_socket.h"
 #include "ipc.h"
 
+#define DEFAULT_IP "0.0.0.0"
 #define PORT 8080
 #define BUFFER_SIZE 1024
 
@@ -42,11 +43,11 @@ int handle_client(ipc_handle_t *client_sock) {
 }
 
 /**
- * @brief Main function for the server.
+ * @brief Function to perform Server side of IPC via LIBIPC
  */
 int socket_server_example() {
         // Create a listening IPC socket handle using libipc
-    ipc_handle_t *server_socket = ipc_socket_create("0.0.0.0", PORT, 1); // 1 for server
+    ipc_handle_t *server_socket = ipc_socket_create(DEFAULT_IP, PORT, 1); // 1 for server
     if (server_socket == NULL) {
         printf("Failed to create server socket.\n");
         return IPC_FAILURE;
@@ -80,6 +81,9 @@ int socket_server_example() {
     return IPC_SUCCESS;
 }
 
+/**
+ * @brief Main Driver function
+ */
 int main() {
     int ret = -1;
     printf("Starting IPC Library Example Socket Server Application...\n");

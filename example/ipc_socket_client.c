@@ -1,5 +1,5 @@
 /**
- * @file ipc_client.c
+ * @file ipc_socket_client.c
  * author Animesh0817 (mailtome.anni@gmail.com)
  * @brief Simple IPC socket client using libipc framework for TCP-based communication.
  */
@@ -15,7 +15,7 @@
 #define BUFFER_SIZE 1024
 
 /**
- * @brief Main function for the client.
+ * @brief Function to perform client side of IPC via LIBIPC.
  */
 int socket_client_example() {
     // Create a client IPC socket handle using libipc
@@ -54,6 +54,9 @@ int socket_client_example() {
     return IPC_SUCCESS;
 }
 
+/**
+ * @brief Main Driver Function.
+ */
  int main() {
      int ret = -1;
      printf("Starting IPC Library Example Socket Client Application...\n");

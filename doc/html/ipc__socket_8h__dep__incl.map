@@ -1,0 +1,6 @@
+<map id="include/ipc_socket.h" name="include/ipc_socket.h">
+<area shape="rect" id="node1" title="IPC using sockets." alt="" coords="168,5,321,32"/>
+<area shape="rect" id="node2" href="$ipc__socket_8c.html" title="Implementation of IPC using sockets." alt="" coords="5,87,145,114"/>
+<area shape="rect" id="node3" href="$ipc__socket__client_8c.html" title="Simple IPC socket client using libipc framework for TCP&#45;based communication." alt="" coords="169,80,320,121"/>
+<area shape="rect" id="node4" href="$ipc__socket__server_8c.html" title="Simple IPC socket server using libipc framework for TCP&#45;based communication." alt="" coords="344,80,495,121"/>
+</map>
