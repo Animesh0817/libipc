@@ -31,7 +31,7 @@ add_library(ipc_library_shared SHARED
 )
 
 # Add subdirectories
-# add_subdirectory(tests)
+add_subdirectory(tests)
 add_subdirectory(example)
 
 # Doxygen documentation
